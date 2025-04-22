@@ -5,8 +5,12 @@ const { createToken, customError } = require("../../helpers");
 const login = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
-  const pass = await user?.verifyPassword(password);
-  if (!user || !pass || !user.verify) {
+  // const pass = await user?.verifyPassword(password);
+  if (
+    !user
+    // || !pass
+    // || !user.verify
+  ) {
     throw customError("Email or password is incorrect or not verified", 401);
   }
 

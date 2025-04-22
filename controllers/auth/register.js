@@ -14,12 +14,12 @@ const register = async (req, res) => {
 
   await newUser.setPassword(password);
 
-  const mail = {
-    to: email,
-    subject: " Email`s verify",
-    html: `<a target='_blank' href='http://localhost:3000/api/auth/verify/${verificationToken}' >Go to verify email</a>`,
-  };
-  await sendMail(mail);
+  // const mail = {
+  //   to: email,
+  //   subject: " Email`s verify",
+  //   html: `<a target='_blank' href='http://localhost:3000/api/auth/verify/${verificationToken}' >Go to verify email</a>`,
+  // };
+  // await sendMail(mail);
 
   const payload = {
     id: newUser._id,
