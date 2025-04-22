@@ -8,9 +8,14 @@ const register = async (req, res) => {
   const { name, email, password } = req.body;
   const avatarURL = gravatar.url(email);
 
-  const verificationToken = nanoid();
+  // const verificationToken = nanoid();
 
-  const newUser = new User({ name, email, avatarURL, verificationToken });
+  const newUser = new User({
+    name,
+    email,
+    avatarURL,
+    // verificationToken
+  });
 
   await newUser.setPassword(password);
 
