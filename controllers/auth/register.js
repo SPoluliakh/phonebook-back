@@ -7,6 +7,7 @@ const { createToken, sendMail } = require("../../helpers");
 const register = async (req, res) => {
   const { name, email, password } = req.body;
   const avatarURL = gravatar.url(email);
+  console.log("=============", name);
 
   // const verificationToken = nanoid();
 
